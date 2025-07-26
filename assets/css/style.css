@@ -105,10 +105,7 @@ nav .nav-link {
   font-weight: 500;
   color: var(--text-fg);
 }
-nav .nav-link.active {
-  color: var(--primary-color) !important;
-}
-nav .nav-link:hover {
+nav .nav-link.active, nav .nav-link:hover {
   color: var(--primary-color) !important;
 }
 nav .dropdown ul li {
@@ -131,17 +128,19 @@ nav .hamburger-menu-bar.bottom {
   width: 20px;
   margin-block-end: 0;
 }
-nav .navbar-toggler .hamburger-menu-bar.top {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-nav .navbar-toggler .hamburger-menu-bar.bottom {
-  transform: rotate(140deg) translate(3px, 3px);
-}
-nav .navbar-toggler.collapsed .hamburger-menu-bar.top {
-  transform: rotate(0) translate(0, 0);
+nav .navbar-toggler.collapsed .hamburger-menu-bar.top,
+nav .navbar-toggler.collapsed .hamburger-menu-bar.bottom {
+  transform: rotate(0deg) translate(0, 0);
 }
 nav .navbar-toggler.collapsed .hamburger-menu-bar.bottom {
-  transform: rotate(0) translate(0, 0);
+  width: 20px;
+}
+nav .navbar-toggler:not(.collapsed) .hamburger-menu-bar.top {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+nav .navbar-toggler:not(.collapsed) .hamburger-menu-bar.bottom {
+  transform: rotate(-45deg) translate(6px, -6px);
+  width: 30px;
 }
 
 .banner-sec .grid-container {
@@ -194,6 +193,7 @@ nav .navbar-toggler.collapsed .hamburger-menu-bar.bottom {
 }
 .journey-sec .content-container .card {
   padding: 60px 53px;
+  border: 1px solid var(--border-bg);
 }
 
 .partner-sec .content-wrapper {
@@ -209,6 +209,20 @@ nav .navbar-toggler.collapsed .hamburger-menu-bar.bottom {
 }
 .press-sec .card {
   padding: 98px 66px;
+  border: 1px solid var(--border-bg);
+}
+.press-sec .card svg {
+  transition: transform 0.4s ease;
+  transform-origin: center center;
+}
+.press-sec .card:hover {
+  cursor: pointer;
+  box-shadow: 0 6px 24px 0 var(--card-shadow);
+  transform: translate3d(0, -5px, 0.01px);
+}
+.press-sec .card:hover svg {
+  transform: rotateY(10deg) scale(1.05) translateY(-5px);
+  transform-style: preserve-3d;
 }
 
 .grid-container1 {

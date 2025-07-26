@@ -159,7 +159,7 @@ gsap.from(".partner-sec .col img", {
 });
 
 
-gsap.from(".press-sec .card", {
+gsap.from(".press-sec .col", {
   y: 50,
   opacity: 0,
   stagger: 0.3,
